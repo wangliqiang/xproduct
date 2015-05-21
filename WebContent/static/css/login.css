@@ -1,0 +1,221 @@
+/* S= CSS RESET
+----------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* E= CSS RESET */
+
+/* S= Page Login
+----------------------------------------------------------------- */
+html, body {
+	height: 100%;
+}
+body {
+	background: #e8eaee url(img/login/login-bg.jpg) repeat-x;
+	font-family:"Microsoft Yahei";
+}
+.login-Wrap {
+	
+	height: 100%;
+	width: 100%;
+}
+.login-midWrap {
+	left: 0;
+	position: absolute;
+	top: 40%;
+	width: 100%;
+}
+.login-box {
+	background: url(img/login/login-bg-cloud.png) center top no-repeat;
+	height: 301px;
+	margin: -167px auto 0;
+	padding: 17px 280px;
+	width: 430px;
+}
+.login-box .hd {
+	height: 27px;
+	text-align: center;
+	width: 100%;
+}
+.login-box .bd {	
+	height: 245px;
+	margin-left: 36px;
+	margin-top: 29px;
+	position: relative;
+	width: 373px;
+}
+.login-box .bd .tabs {
+	right: 0;
+	top: 37px;
+	position: absolute;
+	z-index: 2;
+}
+.login-box .bd .tabs li,
+.login-box .bd .tabs li a {
+	display: block;
+	height: 30px;
+	width: 30px;
+}
+.login-box .bd .tabs li {
+	margin: -5px 0 1px -5px;
+	position: relative;
+	z-index: 5;
+	width: 25px;
+}
+.login-box .bd .tabs li a {
+	background-repeat: no-repeat;
+	background-image: url(img/login/login-skin.png);
+	background-position: -351px -31px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 30px;
+	text-align: right;
+	text-decoration: none;
+	padding-right: 5px;
+	width: 20px;
+}
+.login-box .bd .tabs li.current {
+	margin-left: 0;
+	z-index: 6;
+}
+.login-box .bd .tabs li.current a {
+	background-position: -351px 0;
+	font-size: 14px;
+	padding-right: 6px;
+	width: 19px;
+}
+.login-box .bd .cont {
+	background: url(img/login/login-skin.png) -42px -88px no-repeat;
+	height: 213px;
+	width: 348px;
+	padding: 32px 0 0 8px;
+	position: relative;
+	z-index: 10;
+    -webkit-transition: all .35s ease-in-out;
+    -moz-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+}
+.login-box .bd .cont .cell {
+	padding: 0 0 20px 20px;
+    -webkit-transition: all .35s ease-in-out;
+    -moz-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+}
+.login-box .bd .contError {
+    padding-top: 30px;
+}
+.login-box .bd .contError .cell {
+    padding: 0 0 12px 20px;
+}
+.login-box .bd .cont .cellError {
+    display: none;
+}
+.login-box .bd .contError .cellError {
+    display: block;
+}
+.login-box .bd .cont .cell input.txt {
+	background-image: url(img/login/login-skin.png);
+	background-repeat: no-repeat;
+	border: 2px solid #cfd6da;
+	border-radius: 3px;
+	color: #b8bbbf;
+	font-size: 14px;
+	height: 26px;
+	line-height: 26px;
+	outline: 0 none;
+	padding: 5px 34px 5px 10px;
+	width: 252px;
+}
+.login-box .bd .cont .cell input.txt.user {
+	background-position: 272px 11px;
+}
+.login-box .bd .cont .cell input.txt.user:focus {
+	background-position: 272px -39px;
+}
+.login-box .bd .cont .cell input.txt.pwd {
+	background-position: 272px -89px;
+}
+.login-box .bd .cont .cell input.txt.pwd:focus {
+	background-position: 272px -139px;
+}
+.login-box .bd .cont .cell input.txt:focus {
+	border: 2px solid #1ab899;
+	color: #34495e;
+}
+.login-box .bd .cont .cell input.btn {
+	border: 0 none;
+	background-image: url(img/login/login-skin.png);
+	background-repeat: no-repeat;
+	background-position: -50px 0;
+	cursor: pointer;
+	height: 40px;
+	width: 300px;
+}
+.login-box .bd .cont .cell input.btn:hover {
+	background-position: -50px -41px;
+}
+.login-box .bd .cont .cell .loginError {
+    background: url(img/login/login-skin.png) -50px -333px no-repeat;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 35px;
+    width: 265px;
+}
+.login-footer {
+	bottom: 27px;
+	color: #778095;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	min-width: 990px;
+}
+.login-footer p {
+	color: #778095;
+	font-size: 12px;
+	margin-bottom: 8px;
+}
+/* E= Page Login */

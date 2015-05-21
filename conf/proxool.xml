@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  the proxool configuration can be embedded within your own application's.
+  Anything outside the "proxool" tag is ignored.
+-->
+<something-else-entirely>
+  <proxool>
+    <alias>mssqlProxool</alias>
+    
+    <driver-url>jdbc:mysql://localhost:3306/xproduct?useUnicode=true&amp;characterEncoding=UTF-8</driver-url>
+    <driver-class>com.mysql.jdbc.Driver</driver-class>
+    <driver-properties>
+      <property name="user" value="root" />
+      <property name="password" value="root" />
+    </driver-properties>
+    
+    <!-- proxool 自动侦察各个连接状态的时间间隔 ( 毫秒 ),侦察到空闲的连接就马上回收 , 超时的销毁 -->
+	<house-keeping-sleep-time>60000</house-keeping-sleep-time>
+	<!-- 指因未有空闲连接可以分配而在队列中等候的最大请求数 , 超过这个请求数的用户连接就不会被接受 -->
+	<!-- <maximum-new-connections>20</maximum-new-connections> -->
+	<simultaneous-build-throttle>20</simultaneous-build-throttle>
+	<!-- 最少保持的空闲连接数 
+	<prototype-count>5</prototype-count>-->
+	<!-- 允许最大连接数 , 超过了这个连接，再有请求时，就排在队列中等候，最大的等待请求数由 maximum-new-connections 
+		决定 -->
+	<maximum-connection-count>500</maximum-connection-count>
+	<!-- 最小连接数 -->
+	<minimum-connection-count>5</minimum-connection-count>
+	<!-- 在分配连接前后是否进行有效性测试 -->
+	<test-before-use>true</test-before-use>
+	<!--<test-after-use>true</test-after-use>-->
+	<!-- 用于测试的 SQL -->
+	<house-keeping-test-sql>select 1 from dual</house-keeping-test-sql>
+	<!-- 表示连接的最大活动时间，默认5分钟<maximum-active-time>300000</maximum-active-time>-->
+	<!-- 由于系统存在制卡功能，如果制卡1万张，需要保持连接时间为1小时左右，10万张推理来说就花10小时，因此该连接最大活动时间设置在10小时以上 -->
+	<maximum-active-time>72000000</maximum-active-time><!-- 1200分钟 -->
+  </proxool>
+</something-else-entirely>

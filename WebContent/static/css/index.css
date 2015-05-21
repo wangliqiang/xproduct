@@ -1,0 +1,18 @@
+.l-topmenu{height:49px;overflow:hidden;position:relative;border-bottom:1px solid #d1d4dc;background:url(../../static/css/img/layout/l-topmenu.png) left top repeat-x #eaecef}
+.l-topmenu .l-topmenu-l{float:left}
+.l-topmenu .l-topmenu-l .logo{position:absolute;left:10px;top:0px}
+.l-topmenu .l-topmenu-r{text-align:right;font-family:"微软雅黑";font-size:12px;color:#374660;line-height:52px;padding-right:20px}
+.l-topmenu .l-topmenu-r a,.l-topmenu .l-topmenu-r span,.l-topmenu .l-topmenu-r font{color:#374660;text-decoration:none;margin: 0 5px 0 1px;}
+.l-topmenu .l-exit{padding-right:20px;display:inline-block;background:url(../../static/css/img/layout/exit.png) right center no-repeat;}
+.l-topmenu .l-skin{padding-right:20px;display:inline-block;background:url(../../static/css/img/layout/clothes.png) right center no-repeat;}
+a {text-decoration: none}
+a:link {color:#777}
+a:visited {color:#000099}
+a:active {color:#333}
+a:hover {color:#000099}
+body {
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:100%;
+}

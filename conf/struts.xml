@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- constant name="struts.enable.DynamicMethodInvocation" value="false"/ -->
+	<constant name="struts.devMode" value="false"/>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.serve.static.browserCache" value="false"/>
+	<constant name="struts.action.extension" value="do"/>
+	<constant name="struts.convention.result.path" value="/page" />
+	<constant name="struts.convention.package.locators" value="action" />
+	<constant name="struts.convention.action.name.separator" value="-" /> 
+	<!-- 设置上传文件的临时文件夹 -->
+	<constant name="struts.multipart.saveDir" value="d:/tmp"/>
+	<!-- 设置上传文件上限10M（1M=1048576） -->
+	<constant name="struts.multipart.maxSize" value="10485760" />
+	<package name="xproduct" extends="struts-default">
+		<result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult">
+            	<!-- 解决IE下提示下载 -->
+            	<param name="contentType">text/html</param>
+            </result-type>
+            <!-- <result-type name="chain" class="com.opensymphony.xwork2.ActionChainResult"/>
+	        <result-type name="dispatcher" class="org.apache.struts2.dispatcher.ServletDispatcherResult" default="true"/>
+	        <result-type name="freemarker" class="org.apache.struts2.views.freemarker.FreemarkerResult"/>
+	        <result-type name="httpheader" class="org.apache.struts2.dispatcher.HttpHeaderResult"/>
+	        <result-type name="redirect" class="org.apache.struts2.dispatcher.ServletRedirectResult"/>
+	        <result-type name="redirectAction" class="org.apache.struts2.dispatcher.ServletActionRedirectResult"/>
+	        <result-type name="stream" class="org.apache.struts2.dispatcher.StreamResult"/>
+	        <result-type name="velocity" class="org.apache.struts2.dispatcher.VelocityResult"/>
+	        <result-type name="xslt" class="org.apache.struts2.views.xslt.XSLTResult"/>
+	        Deprecated name form scheduled for removal in Struts 2.1.0. The camelCase versions are preferred. See ww-1707
+	        <result-type name="redirect-action" class="org.apache.struts2.dispatcher.ServletActionRedirectResult"/>
+	        <result-type name="plaintext" class="org.apache.struts2.dispatcher.PlainTextResult" /> -->
+        </result-types>
+        <interceptors>
+      		<interceptor name="permissionInterceptor" class="cn.com.checknull.interceptor.PermissionInterceptor"></interceptor>
+            <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+            <interceptor-stack name="xproductStack">
+                <interceptor-ref name="exception"/>
+                <interceptor-ref name="alias"/>
+                <interceptor-ref name="servletConfig"/>
+                <interceptor-ref name="i18n"/>
+                <interceptor-ref name="prepare"/>
+                <interceptor-ref name="chain"/>
+                <interceptor-ref name="scopedModelDriven"/>
+                <interceptor-ref name="modelDriven"/>
+                <interceptor-ref name="fileUpload">
+                	<!-- 配置允许上传的文件类型（2003excel,2007excel）
+                	<param name="allowedTypes">application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</param> -->
+                	<!-- 配置允许上传的文件大小 单位字节 -->
+                	<param name="maximumSize">10485760</param>
+                </interceptor-ref>
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="multiselect"/>
+                <interceptor-ref name="staticParams"/>
+                <interceptor-ref name="actionMappingParams"/>
+                <interceptor-ref name="params">
+                    <param name="excludeParams">^class\..*,^dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
+                </interceptor-ref>
+                <interceptor-ref name="conversionError"/>
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+                <interceptor-ref name="workflow">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+                <interceptor-ref name="debugging"/>
+                <interceptor-ref name="json"/>
+                <interceptor-ref name="permissionInterceptor" />
+            </interceptor-stack>
+        </interceptors>  
+        
+        <default-interceptor-ref name="xproductStack" />
+        <global-results>
+        	<result name="json" type="json">
+                <param name="root">json</param>
+            </result>
+        </global-results>
+    </package>
+	
+</struts> 

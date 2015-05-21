@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+.welcome-tip{
+	background:#f9f0e9 url('../css/img/layout/icon-11-12.png') 20px 9px no-repeat;
+	border-bottom: 1px solid #f5ddce;
+	line-height: 22px;
+	padding:7px 20px 4px 40px;
+	position: relative;
+	font-family: "微软雅黑";
+	color: #ec8c6a;
+	overflow: hidden;
+}
+.welcome-close {
+    background: url("../css/img/layout/icon-11-11.png") 0 0 no-repeat;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    filter: alpha(opacity = 70);opacity: 0.70;
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.br {
+    clear: both;
+    height: 10px;
+}
+.welcome-title{
+	font-size: 20px;
+	color: #16a085;
+	padding: 0px 0;
+	border-bottom: 1px solid #e2e5e9;
+}
+.welcome-box{
+	padding: 10px 20px;
+	font-family: "微软雅黑";
+}
+.welcome-lsit{
+	font-family: "微软雅黑";
+	font-size: 12px;
+	color: #374660;
+	line-height: 22px;
+}
+.welcome-lsit a{
+	color: #374660;
+	text-decoration: none;
+}
+.welcome-lsit a:hover{
+	color: #16a085;
+}
+.welcome-lsit dt{
+	font-size: 14px;
+	font-weight: bold;
+	padding-left:10px;
+	padding:5px 10px;
+	background: url('../css/img/layout/icon-11-13.png') 0px 9px no-repeat;
+}
+.welcome-lsit dd{
+	padding:2px 0;
+}
